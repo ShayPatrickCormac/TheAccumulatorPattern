@@ -147,11 +147,10 @@ def draw_lines(n, point, window):
     y = point.y
     point = rg.Point(x, y)
     y1 = y - 100
-    c = 200/(n-1)
+    gap = 200/(n-1)
     for _ in range(n):
-
         line = rg.Line(point,rg.Point(x+100,y1))
-        y1 = y1 + c
+        y1 = y1 + gap
         line.attach_to(window)
         window.render()
     """
