@@ -7,9 +7,10 @@ A subsequent module lets you practice the ACCUMULATOR pattern in another classic
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Zijian Huang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import math
 
 # ----------------------------------------------------------------------
 # Students: As you work each of these problems, ask yourself:
@@ -31,7 +32,7 @@ def main():
 def test_sum_more_cosines():
     """ Tests the   sum_more_cosines   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  sum_more_cosines  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     #
@@ -62,6 +63,18 @@ def test_sum_more_cosines():
     print('Test 1 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
+    # Test 2:
+    expected = 1.19859
+    answer = sum_more_cosines(4,8)
+    print('Test 2 expected',expected)
+    print('       actual:  ',answer)
+
+    # Test 3
+    expected = -1.04742
+    answer =sum_more_cosines(8,12)
+    print('Test 3 expected',expected)
+    print('       actual:  ',answer)
+
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
@@ -69,6 +82,11 @@ def test_sum_more_cosines():
 
 
 def sum_more_cosines(m, n):
+    total = 0
+    for k in range(n - m + 1):
+        total = total + (math.cos(m + k))
+    return total
+
     """
     What comes in:  The two arguments are integers m and n, with m <= n.
     What goes out:  Returns the sum
@@ -83,7 +101,7 @@ def sum_more_cosines(m, n):
          which is approximately 0.02082.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
